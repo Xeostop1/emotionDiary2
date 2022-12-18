@@ -1,7 +1,8 @@
+import DiaryEditor from "../components/DiaryEditor";
 const New = () => {
   return (
     <div>
-      <h1>새로운 일기 작성페이지 입니다</h1>
+      <DiaryEditor />
     </div>
   );
 };
