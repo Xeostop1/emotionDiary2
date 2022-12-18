@@ -80,14 +80,14 @@ function App() {
   const dataId = useRef(0);
   //=======dispatch함수
   //crate
-  const onCreate = (date, content, emoiton) => {
+  const onCreate = (date, content, emotion) => {
     dispatch({
       type: "CREATE",
       data: {
         id: dataId.current,
         date: new Date(date).getTime(),
         content,
-        emoiton,
+        emotion,
       },
     });
     dataId.current += 1;
@@ -100,14 +100,14 @@ function App() {
     });
   };
   //edit
-  const onEdit = (targetId, date, content, emoiton) => {
+  const onEdit = (targetId, date, content, emotion) => {
     dispatch({
       type: "EDIT",
       data: {
         id: targetId,
         date: new Date(date).getTime(),
         content,
-        emoiton,
+        emotion,
       },
     });
   };
