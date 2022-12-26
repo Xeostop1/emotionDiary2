@@ -16,5 +16,4 @@
 ![react_2_2](https://user-images.githubusercontent.com/97787658/209534216-fa4157a7-7eee-413d-b975-fb473c9a4c8b.png)
 ![react_2_3](https://user-images.githubusercontent.com/97787658/209534217-65f8972a-c2e4-4c66-b89b-e45b1c3bcc57.png)
 
-  firebase deploy
 </div>
