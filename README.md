@@ -1,8 +1,8 @@
 
 
-
+# Emotion Diary
 <div align="center">
-  # Emotion Diary
+  
   
   |Emotion Diary|React.js로 만든 나만의 감정일기장|
   |--|---|
