@@ -83,21 +83,22 @@ header button {
   font-family: var(--font-total);
 }
 /* ===다이어리리스트=== */
-.DiaryList {
+.DiaryList{
+
 }
-.DiaryList .menu_wrapper {
+.DiaryList .menu_wrapper{
   margin-top: 20px;
   margin-bottom: 30px;
   display: flex;
   justify-content: space-between;
 }
-.DiaryList .menu_wrapper .right_col {
+.DiaryList .menu_wrapper .right_col{
   flex-grow: 1;
 }
-.DiaryList .menu_wrapper .right_col button {
+.DiaryList .menu_wrapper .right_col button{
   width: 100%;
 }
-.DiaryList .ControlMenu {
+.DiaryList .ControlMenu{
   margin-right: 10px;
   border: none;
   border-radius: 5px;
@@ -109,8 +110,8 @@ header button {
 }
 
 /* 다이어리 아이템 */
-.DiaryItem {
-  padding-top: 15px;
+.DiaryItem{
+  padding-top:15px;
   padding-bottom: 15px;
 
   border-bottom: 1px solid #e2e2e2;
@@ -118,7 +119,7 @@ header button {
   justify-content: space-between;
 }
 
-.DiaryItem .emotion_img_wrapper {
+.DiaryItem .emotion_img_wrapper{
   cursor: pointer;
   min-width: 120px;
   height: 80px;
@@ -126,72 +127,70 @@ header button {
   display: flex;
   justify-content: center;
 }
-.DiaryItem .emotion_img_wrapper_1 {
+.DiaryItem .emotion_img_wrapper_1{
   background-color: #64c964;
 }
-.DiaryItem .emotion_img_wrapper_2 {
+.DiaryItem .emotion_img_wrapper_2{
   background-color: #9dd772;
 }
-.DiaryItem .emotion_img_wrapper_3 {
+.DiaryItem .emotion_img_wrapper_3{
   background-color: #fdce17;
 }
-.DiaryItem .emotion_img_wrapper_4 {
+.DiaryItem .emotion_img_wrapper_4{
   background-color: #fd8446;
 }
-.DiaryItem .emotion_img_wrapper_5 {
+.DiaryItem .emotion_img_wrapper_5{
   background-color: #fd565f;
 }
-.DiaryItem .emotion_img_wrapper img {
-  width: 60%;  
+.DiaryItem .emotion_img_wrapper img{
+  width: 60%;
 }
-.DiaryItem .info_wrapper {
+.DiaryItem .info_wrapper{
   flex-grow: 1;
-  cursor: pointer;
   margin-left: 20px;
+  cursor: pointer;
 }
-.DiaryItem .diary_date {
+.DiaryItem .diary_date{
   font-weight: bold;
   font-size: 25px;
   margin-bottom: 5px;
 }
-.DiaryItem .diary_content_preview {
+.DiaryItem .diary_content_preview{
   font-size: 18px;
 }
-.DiaryItem .btn_wrapper {
+.DiaryItem .btn_wrapper{
   min-width: 70px;
 }
-.DiaryEditor .emotion_list_wrapper {
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  gap: 2%;
+
+/* DiaryEditor */
+.DiaryEditor{
+
 }
-/* =======다이어리에디터===========  */
-.DiaryEditor {
-}
-.DiaryEditor section {
+
+.DiaryEditor section{
   margin-bottom: 40px;
 }
-.DiaryEditor h4 {
+.DiaryEditor h4{
   font-size: 22px;
   font-weight: bold;
+
 }
-.DiaryEditor .input_date {
+.DiaryEditor .input_date{
   border: none;
   border-radius: 5px;
-  background-color: #ececec;
+  background-color: #e2e2e2;
   padding: 10px 20px 10px 20px;
   cursor: pointer;
   font-family: var(--font-total);
   font-size: 20px;
 }
-.DiaryEditor .control_box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* 원본 볼때 여기 다시 보기!  */
+.DiaryEditor .emotion_list_wrapper{
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap:2%;
 }
-
-/* =====다이어리 에디터 텍스트 에리어 */
-.DiaryEditor textarea {
+.DiaryEditor textarea{
   font-family: var(--font-content);
   font-size: 20px;
   box-sizing: border-box;
@@ -200,54 +199,131 @@ header button {
   resize: vertical;
   border: none;
   border-radius: 5px;
-  background-color: #ececec;
+  background-color: #e2e2e2;
   padding: 10px 20px 10px 20px;
 }
+.DiaryEditor .control_box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-/* ======이모션 아이템====== */
-.EmotionItem {
+/* EmotionItem */
+.EmotionItem{
   cursor: pointer;
   border-radius: 5px;
   padding-top: 20px;
   padding-bottom: 20px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.EmotionItem img {
+.EmotionItem img{
   width: 60%;
   margin-bottom: 10px;
 }
-.EmotionItem span {
+.EmotionItem span{
   font-size: 18px;
 }
 
-.EmotionItem_off {
-  background-color: #ececec;
+.EmotionItem_off{
+  background-color: #e2e2e2;
+  opacity: 0.8;
 }
-.EmotionItem_on_1 {
+
+.EmotionItem_on_1{
   background-color: #64c964;
   color: white;
-  transition: 1s;
+  transform: scale(1.1);
+  transition: 0.6s;
+  
 }
-.EmotionItem_on_2 {
+.EmotionItem_on_2{
   background-color: #9dd772;
   color: white;
-  transition: 1s;
+  transform: scale(1.1);
+  transition: 0.6s;
 }
-.EmotionItem_on_3 {
+.EmotionItem_on_3{
   background-color: #fdce17;
   color: white;
-  transition: 1s;
+  transform: scale(1.1);
+  transition: 0.6s;
 }
-.EmotionItem_on_4 {
+.EmotionItem_on_4{
   background-color: #fd8446;
   color: white;
-  transition: 1s;
+  transform: scale(1.1);
+  transition: 0.6s;
 }
-.EmotionItem_on_5 {
+.EmotionItem_on_5{
   background-color: #fd565f;
   color: white;
-  transition: 1s;
+  transform: scale(1.1);
+  transition: 0.6s;
+}
+/* DiaryPage */
+.DiaryPage{
+
+}
+.DiaryPage section{
+  width: 100%;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.DiaryPage h4{
+  font-size: 22px;
+  font-weight: bold;
+}
+.DiaryPage .diary_img_wrapper{
+  background-color: #e2e2e2;
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.DiaryPage .emotion_descript{
+  font-size: 25px;
+  color: white;
+}
+
+.DiaryPage .diary_img_wrapper_1{
+  background-color: #64c964;
+}
+.DiaryPage .diary_img_wrapper_2{
+  background-color: #9dd772;
+}
+.DiaryPage .diary_img_wrapper_3{
+  background-color: #fdce17;
+}
+.DiaryPage .diary_img_wrapper_4{
+  background-color: #fd8446;
+}
+.DiaryPage .diary_img_wrapper_5{
+  background-color: #fd565f;
+}
+.DiaryPage .diary_content_wrapper {
+  width: 100%;
+  background-color: #e2e2e2;
+  border-radius: 5px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.DiaryPage .diary_content_wrapper p{
+  padding: 20px;
+  text-align: left;
+  font-size: 20px;
+  font-family: var(--font-content);
+  font-weight: 400;
+  line-height: 1.7;
 }
