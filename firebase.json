@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site":"stop1-react-project",
     "public": "build",
     "ignore": [
       "firebase.json",
