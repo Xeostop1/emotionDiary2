@@ -23,7 +23,11 @@ const Home = () => {
       const lastDay=new Date(
         curDate.getFullYear(),
         curDate.getMonth()+1,
-        0
+        // 추가 시간객체 시분초 까지 다시 써줌
+        0,
+        23,
+        59,
+        59
       ).getTime();
       
       setData(diaryList.filter((it)=>  fisrtDay<= it.date && it.date<=lastDay));

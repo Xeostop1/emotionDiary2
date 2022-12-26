@@ -1,8 +1,9 @@
 //========컨트롤 메뉴
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState ,useEffect } from 'react';
 import MyButton from './MyButton';
 import DiaryItem from './DiaryItem';
+import React from 'react';
 
 const SortOptionList=[
     {value:"lastest",   name:"최신순"},
@@ -17,7 +18,7 @@ const filterOptionList=[
 
 
 
-const ControlMenu=({value, onChange, optionList})=>{
+const ControlMenu=React.memo(({value, onChange, optionList})=>{
     return(
     <select 
         className='ControlMenu'
@@ -28,7 +29,7 @@ const ControlMenu=({value, onChange, optionList})=>{
                 {it.name}
             </option>))}
     </select>
-)};
+)});
 
 
 const DirayList=({diaryList})=>{

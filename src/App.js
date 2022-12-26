@@ -1,4 +1,4 @@
-import React, { useReducer, useRef } from "react";
+import React, { useReducer, useRef,useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -6,6 +6,9 @@ import Home from "./pages/Home";
 import New from "./pages/New";
 import Edit from "./pages/Edit";
 import Diary from "./pages/Diary";
+//import { dummy } from "./util/dummy";
+
+
 
 //=====reducer 스위치문=====
 const reducer = (state, action) => {
@@ -31,6 +34,7 @@ const reducer = (state, action) => {
     default:
       return state;
   }
+  localStorage.setItem("diary", JSON.stringify(newState));
   return newState;
 };
 
@@ -38,56 +42,34 @@ const reducer = (state, action) => {
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
-//==더미데이터 
-const dummy=[
-  {
-    id: 1,
-    emotion: 1,
-    content: "오늘의 일기 1번",
-    date: 1670484246888,
-  },
-  {
-    id: 2,
-    emotion: 2,
-    content: "오늘의 일기 2번",
-    date: 1670484246889,
-  },
-  {
-    id: 3,
-    emotion: 3,
-    content: "오늘의 일기 3번",
-    date: 1670484246890,
-  },
-  {
-    id: 4,
-    emotion: 4,
-    content: "오늘의 일기 4번",
-    date: 1670484246891,
-  },
-  {
-    id: 5,
-    emotion: 5,
-    content: "오늘의 일기 5번",
-    date: 1670484246892,
-  },
-];
-
-
 //====App=========
 function App() {
   
-  const [data, dispatch] = useReducer(reducer, dummy);
+  useEffect(()=>{
+    const localDate=localStorage.getItem("diary");
+    if(localDate){
+      const diaryList= JSON.parse(localDate).sort((a,b)=>parseInt(b.id)-parseInt(a.id));
+      dataId.current=parseInt(diaryList[0].id+1);
+      // console.log(diaryList);
+      // console.log(dataId);
+      dispatch({type:"INIT", data:diaryList})
+    }
+  },[]);
+
+//더미데이터 넣는 곳
+  const [data, dispatch] = useReducer(reducer, []);
+  //수정사항
   const dataId = useRef(0);
   //=======dispatch함수
   //crate
-  const onCreate = (date, content, emoiton) => {
+  const onCreate = (date, content, emotion) => {
     dispatch({
       type: "CREATE",
       data: {
         id: dataId.current,
         date: new Date(date).getTime(),
         content,
-        emoiton,
+        emotion,
       },
     });
     dataId.current += 1;
@@ -100,14 +82,14 @@ function App() {
     });
   };
   //edit
-  const onEdit = (targetId, date, content, emoiton) => {
+  const onEdit = (targetId, date, content, emotion) => {
     dispatch({
       type: "EDIT",
       data: {
         id: targetId,
         date: new Date(date).getTime(),
         content,
-        emoiton,
+        emotion,
       },
     });
   };
@@ -120,7 +102,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/new" element={<New />} />
-              <Route path="/edit" element={<Edit />} />
+              <Route path="/edit/:id" element={<Edit />} />
               <Route path="/diary/:id" element={<Diary />} />
             </Routes>
           </div>
