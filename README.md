@@ -1,6 +1,6 @@
 
 
-# 😉Emotion Diary😊
+          # 😉Emotion Diary
 <div align="center">
   
   
